@@ -25,8 +25,13 @@ const setData = (payload) => {
 export const fetchData = () => {
   return (dispatch) => {
     const url = "/mockdata/data.json";
-    return axios.get(url).then((res) => {
-      dispatch(setData(res.data));
-    });
+    return axios
+      .get(url)
+      .then((res) => {
+        dispatch(setData(res.data));
+      })
+      .catch(() => {
+        alert("fetch data error.");
+      });
   };
 };

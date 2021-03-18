@@ -6,7 +6,7 @@ const BottomList = () => {
   const myList = useSelector(selectorMyList);
   return (
     <div className="bottom">
-      <h3 className="bottom">My List</h3>
+      <h3>My List</h3>
       <ul>
         {myList.map((item) => (
           <li key={item.id} className="bottom-item">
