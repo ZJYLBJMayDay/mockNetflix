@@ -5,6 +5,7 @@ import BottomList from "./component/BottomList";
 import logo from "./Netflix_2015_logo.svg";
 import List from "./component/List";
 import { fetchData } from "./redux/actionCreators";
+import { MY_LIST, RECOMMENDATION_LIST } from "./redux/actionConstants";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -16,8 +17,8 @@ const App = () => {
       <div>
         <img className="logo" src={logo} alt="netflix logo" />
       </div>
-      <List type="My List" />
-      <List type="Recommendations List" />
+      <List type={MY_LIST} />
+      <List type={RECOMMENDATION_LIST} />
       <BottomList />
     </div>
   );

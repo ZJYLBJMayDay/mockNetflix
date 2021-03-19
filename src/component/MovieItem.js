@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { removeItem, addItem } from "../redux/actionCreators";
+import { MY_LIST } from "../redux/actionConstants";
 
 const MovieItem = ({ data, type }) => {
   const dispatch = useDispatch();
@@ -9,7 +10,7 @@ const MovieItem = ({ data, type }) => {
       <img src={data.img} alt="movie" />
       <div className="title">{data.title}</div>
       <div className="button">
-        {type === "My List" ? (
+        {type === MY_LIST ? (
           <button onClick={() => dispatch(removeItem(data))}>Remove</button>
         ) : (
           <button onClick={() => dispatch(addItem(data))}>Add</button>
